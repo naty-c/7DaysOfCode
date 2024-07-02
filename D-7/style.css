@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    /* background: radial-gradient(#d3ffd3 20%, #36b336); */
+    background: linear-gradient(#2372e7, #f79fad 80%);
+    color: #f79fad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#fabed5 , 80%, #6cb8fa);
+    padding: 20px;
+    width: 30vw;
+    height: 45vh;
+    border-radius: 10px;
+    box-shadow: 10px 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.calculator h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;    
+    text-shadow: 2px 2px 8px white;
+}
+
+.btn-flip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-size: 1rem;
+    color: #2372e7;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    perspective: 1000px;
+    background: #2372e7;
+    border: 2px solid #2372e7;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-flip:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+}
+
+.btn-flip:hover:before {
+    opacity: 0;
+    transform: translateY(50%) rotateX(100deg);
+}
+
+.btn-flip:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #f79fad;
+    display: block;
+    transition-duration: 0.5s;
+    position: absolute;
+    background: #2372e7;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(100deg);
+    line-height: 40px;
+}
+
+.btn-flip:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #f79fad;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition-duration: 0.5s;
+    position: relative;
+    background: #2372e7;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+}
+
+.result {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    color: #2372e7;
+}

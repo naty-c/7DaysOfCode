@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "VT323", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#ff7066 50%, #ffc766 50%);
+}
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.guess {
+    color: #b34f47;
+    font-size: 2rem;
+    background-color: #ffc766;
+    padding: 10px 24px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px #ffc766;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.guess:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 5px 15px #ffc766;
+}
+
+.guess i {
+    text-shadow: 0 0 20px #b34f47;
+}
+  
+h1 {
+    color: #b34f47;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+p {
+    color: #ff9e66;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    background-color: #b34f47;
+    padding: 40px 15px;
+    border-radius: 6px;
+}
+
+p:hover {
+    animation: shaking .5s ease-in-out infinite;
+}
+
+button {
+    font-family: "VT323", monospace;
+    padding: 10px 50px;
+    font-size: 1.5rem;
+    background-color: #ff9e66;
+    color: #ffc766;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.5s;
+    box-shadow: 0 5px 15px #ff9e66;
+    position: relative;
+}
+  
+button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff7066, #ff9e66, #ffc766, #5dc035, #00ffd5, #3e56ce, #b34f47, #ff00c8, #ff7066);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    border-radius: 6px;
+    background-size: 500%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    filter: blur(5px);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    animation: glowing 20s linear infinite;
+}
+
+button:hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 500% 0; }
+    100% { background-position: 0 0; }
+}
+
+.luck {
+    color: #ff9e66;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.luck i {
+    text-shadow: 0 0 30px #ff7066;
+}
+
+.luck i:hover {
+    animation: shaking .2s infinite;
+}
+
+@keyframes shaking {
+    0% {margin-left: 0;}
+    25% {margin-left: 5px;}
+    50% {margin-left: 0;}
+    75% {margin-left: -5px;}
+    100% {margin-left: 0;}
+}
